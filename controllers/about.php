@@ -1,3 +1,3 @@
 
 
-<?php include 'views/about.php'; ?>
+<?php include dirname(__DIR__) . '/views/about.php'; ?>

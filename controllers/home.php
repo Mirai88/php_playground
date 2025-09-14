@@ -11,4 +11,4 @@ $books = [
 ?>
 
 
-<?php include 'views/home.php'; ?>
+<?php include dirname(__DIR__) . '/views/home.php'; ?>
