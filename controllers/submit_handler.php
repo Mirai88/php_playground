@@ -7,12 +7,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email']);
     $message = htmlspecialchars($_POST['message']);
 
-    $validator = new Validator();
-
     $errors = [];
-    if(!$validator->validateString($name)) $errors['name'] = "Name is required.";
-    if(!$validator->validateEmail($email)) $errors['email'] = "Valid email is required.";
-    if(!$validator->validateString($message, 5, 500)) $errors['message'] = "Message must be between 5 and 500 characters.";
+    if(!Validator::validateString($name)) $errors['name'] = "Name is required.";
+    if(!Validator::validateEmail($email)) $errors['email'] = "Valid email is required.";
+    if(!Validator::validateString($message, 5, 500)) $errors['message'] = "Message must be between 5 and 500 characters.";
 
     if (empty($errors)) {
         // Here you can handle the form submission, e.g., save to a database or send an email
