@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Thank you, $name. Your message has been received.";
     } else {
         // If there are errors, you can include the form again and display the errors
-        include dirname(__DIR__) . '/views/partials/simple_form.php';
+         view('partials/simple_form', ['errors' => $errors]);
     }
 }
 ?>

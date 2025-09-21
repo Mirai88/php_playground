@@ -8,7 +8,9 @@ $books = [
     ['title' => 'The Catcher in the Rye', 'author' => 'J.D. Salinger'],
     ['title' => 'Moby-Dick', 'author' => 'Herman Melville']
 ];
+
+
 ?>
 
 
-<?php include dirname(__DIR__) . '/views/home.php'; ?>
+<?php view('home', ['books' => $books]); ?>
