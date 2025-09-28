@@ -1,5 +1,6 @@
 <?php 
 
+namespace Framework;
 
 class Validator {
     public static function validateString($input, $minLength = 1, $maxLength = null) {

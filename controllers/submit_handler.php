@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__DIR__) . '/Validator.php';
+use Framework\Validator;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
