@@ -1,0 +1,9 @@
+<form action="/notes/store" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
+    <br>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required></textarea>
+    <br>
+    <button type="submit">Create Note</button>
+</form>

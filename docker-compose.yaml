@@ -1,0 +1,33 @@
+services:
+  play-php:
+    container_name: php-play
+    build:
+      context: ./app
+      extra_hosts:
+        - "host.docker.internal:host-gateway"
+    ports:
+      - "8009:80"
+    volumes:
+      - ./app/:/var/www/html
+    networks:
+      - play-ground-network
+    depends_on:
+      - php-playdb
+
+  php-playdb:
+    image: mysql:8.0
+    container_name: php-play-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: php_play
+      MYSQL_PASSWORD: root
+    ports:
+      - "3309:3306"
+    volumes:
+      - ./php_playsql:/var/lib/mysql
+    networks:
+      - play-ground-network
+
+networks:
+  play-ground-network:
+    driver: bridge

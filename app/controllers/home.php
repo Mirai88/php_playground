@@ -10,7 +10,4 @@ $books = [
 ];
 
 
-?>
-
-
-<?php view('home', ['books' => $books]); ?>
+view('home', ['books' => $books]); ?>
